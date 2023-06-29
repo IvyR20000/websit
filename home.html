@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
+	<title>moomin</title>
+	<link rel="shortcut icon" type="image/png" href="moomin.jpg">
+	<style>
+		h{color: maroon; text-align: center; font-size:22px;}
+		hr {height: 5px; width: 1510px; background-color: #494040; border: none;}
+		body {font-family: 'Alata';font-size: 28px; text-align: center;}
+		p {color: maroon; text-align: center;}
+		ul {list-style-type: none; background-color: white; text-align: left;}
+		img {text-align: center;}
+		
+		.rainbow {
+		  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  color:transparent;
+		  -webkit-background-clip: text;
+		  background-clip: text;
+		}
+		
+		.rainbowe {
+		  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+		  color:transparent;
+		  -webkit-background-clip: text;
+		  background-clip: text;
+		 -webkit-mask-image:linear-gradient(transparent, rgba(0,0,0,1) 60% 40%,transparent);
+          mask-image:linear-gradient(transparent, rgba(0,0,0,1) 60% 40%,transparent);
+		}
+				#div1 {
+		  width: 100px;
+		  height: 100px;
+		  padding: 10px;
+		  border: 1px solid #aaaaaa;
+		}
+		aside {
+		  width: 30%;
+		  padding-left: 15px;
+		  margin-left: 15px;
+		  float: right;
+		  font-style: italic;
+		  background-color: lightgray;
+		}
+
+			* {
+			  -webkit-box-sizing: border-box;
+			  box-sizing: border-box;
+			}
+
+			h5 {
+			  margin:0px;
+			  font-size:1.4em;
+			  font-weight:700;
+			}
+
+			.center
+			{
+			  height:100vh;
+			  width:100%;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			}
+
+		<script>
+	function clickCounter() {
+	  if (typeof(Storage) !== "undefined") {
+		if (localStorage.clickcount) {
+		  localStorage.clickcount = Number(localStorage.clickcount)+1;
+		} else {
+		  localStorage.clickcount = 1;
+		}
+		document.getElementById("result").innerHTML = "you've clicked the button " + localStorage.clickcount + " time(s).";
+	  } else {
+		document.getElementById("result").innerHTML = "soz lol your browser doesn't support web storage...";
+	  }
+	}
+	</script>
+		
+		
+</head>	
+<body>
+		<a href="home.html">
+			<img src = "moomin.jpg" style="width:100px;height:100px;">
+		</a>
+		<hr>
+	<p>i'm gonna use this website for my personal project and to just test out random html tags</p>
+	<hr>
+	<marquee behavior="scroll" direction="up" scrollamount="1"><span class="rainbow">welcome to my website</span></marquee>
+	<marquee behavior="scroll" direction="right" scrollamount="12"><span class="rainbowe">not javascript</span></marquee>
+	<marquee behavior="scroll" direction="left" scrollamount="20"><span class="rainbowe">this has a fade</span></marquee>
+	<marquee behavior="scroll" direction="right" scrollamount="50"><span class="rainbow">hiii</span></marquee>
+	<hr>
+	
+	<p>i know your location.</p>
+
+		<button onclick="getLocation()">bet</button>
+
+		<p id="demo"></p>
+
+		<script>
+		var x = document.getElementById("demo");
+
+		function getLocation() {
+		  if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		  } else { 
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		  }
+		}
+
+		function showPosition(position) {
+		  x.innerHTML = "latitude: " + position.coords.latitude + 
+		  "<br>longitude: " + position.coords.longitude;
+		}
+		</script>
+		
+		
+		<hr>
+		<p>DRAG THIS</p>
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<img id="drag1" src="moomin.jpg" draggable="true" ondragstart="drag(event)"width="100" height="100">
+		<hr>
+		
+		<p><button onclick="clickCounter()" type="button">click me</button></p>
+		<div id="result"></div>
+		<p>click the button (counter does not reset).</p>
+		<hr>
+		<label for="file">progress:</label>
+		<progress id="file" value="32" max="100"> 32% </progress>
+		<hr>
+		<details>
+		<summary>this website</summary>
+		<p>this website is a place where i can test these rando html tags that i probably should've used in my assignment.</p>
+		</details>
+		<hr>
+		<h2> Somewhere over the next stretch of time, New Yorkers will have to deal with a HUGE tidal wave of biblical proportions. Meet the La Palma Megatsunami -- and shiver.</h2>
+
+		<p>Try to surf this: a wave almost twice as tall as the Empire State Building, and traveling faster than an airplane, at a breathtaking 700 
+		kilometers per hour. Enough to give you the creeps, right? Well, it should.</p> 
+		<aside><p>It all starts with a faint rumbling of the earth, thousands of miles away.</p></aside>
+		<p>For the question is not so much if such a massive wave will one 
+		day slosh across the oceans -- but when. And there's more disturbing news.</p> <p>If the Doomsday Wave kicks in, it'll be end of story for the US East 
+		Coast. New York City: gone. Boston: washed away. Florida, Miami, the Bahamas -- all history. Oh, several hundreds of years may pass before the Super Wave 
+		rolls in. But on the other hand, it could happen next month as well.</p>
+		
+		<hr>
+		
+
+
+</body>
+</html>
